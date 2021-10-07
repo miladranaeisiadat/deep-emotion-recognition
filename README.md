@@ -4,4 +4,4 @@ Speech emotion recognition is performed in this project by classifying speech ut
 
 ### dataset
 ---
-![](images/datasets.png)
+![datasets](images/datasets.png)
