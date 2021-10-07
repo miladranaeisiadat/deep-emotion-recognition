@@ -1,0 +1,8 @@
+{
+    "emodb": ["neutral", "sad", "happy","fearful", "disgusted", "calm", "angry"],
+    "ravdess": ["neutral", "calm", "happy", "sad", "angry", "fearful", "disgusted", "surprised"],
+    "tess" :["neutral", "calm", "happy", "sad", "angry", "fearful", "disgusted", "surprised"],
+    "savee": ["neutral", "happy", "sad", "angry", "fearful", "disgusted", "surprised"],
+    "crema": ["neutral", "happy", "sad", "angry", "fearful", "disgusted"],
+    "shemo" : []
+}
