@@ -46,3 +46,28 @@ At first we divided whole datasets (EMODB, EMOVO, TESS, CREMA, RAVDESS, SHEMO, S
 ![](images/architecture.png)
 
 The propose architecture of the deep neural network for SER is shown in figure above. The architecture of the deep neural network that was implemented in our study was a one-dimensional convolutional neural network(1D CNN) with three convolutional layers and one fully connected layer with 128 hidden neurons. As we mentioned before, we have three databases with different number of classes. There- fore, depending on the number of classes for each database, have used “softmax” as activation function for the final output nodes to estimate the probability distribution of the classes. We have use max-polling after second and third convolution layer. We chose Rectified Linear Units (ReLU) in convolutional and fully connected layers as activation function to reduce the occurrence of over-fitting problem and introduce nonlinearity to the model. The initial number of kernels was set to 8 and 16 for the first and the second convolutional layers and 32 for the third convolution layer, respectively. Also, the size of each convolution filter is 5 ∗ 1 with 1 stride and ’same’ padding to generate feature maps. the kernel size for max-pooling is 2 with 2 strides and ’same’ padding. We have used Xavier initialize At the fully connected layer to tune initial weight’s values. cross-entropy minimization was used as the loss function and Adam with parameters lr=0.0001 as the optimize. The number of training iteration was 500. Further, we incorporated the dropout operation after the third convolution layer to prevent overfitting and improve the performance.
+
+### Installing dependencies
+---
+Note: You can skip this step, if you are installing the packages. Dependencies are listed in the requirements.txt file.
+#### Requirements
+* numpy
+* pandas
+* librosa==0.8.1
+* soundfile==0.10.3
+* matplotlib==3.4.3
+* tqdm
+* tensorflow
+* keras==2.4.0
+* seaborn
+* scikit-learn==2.6.0
+* rich==10.12.0
+
+After you cloned the repository, you need to create a virtual environment, so you have a clean python installation. You can do this by running the command
+```sh
+python -m venv env
+```
+After creating virtual environment, it is necessary to activate the virtual environment. You can install all the required dependencies by running
+```sh
+pip install -r requirements.txt
+```
