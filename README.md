@@ -40,4 +40,4 @@ As mentioned, the output of MFCC is a 2D matrix format with MFCC bands on the y-
 #### Training and Test Sets
 At first we divided whole datasets (EMODB, EMOVO, TESS, CREMA, RAVDESS, SHEMO, SAVEE) for training purpose and testing purpose with each **80%** and **20%** of the data respectively. Then we have computed the **MFCC features (50 coefficients)** for each utterance in training dataset and test dataset also. Finally, the labels of the training and the test data were encoded as **one-hot** vectors and fed them to our CNN network.<br>
 
-<img src="images/split.png" width="50%" height="50%">
+<div style="text-align:center"><img src="images/split.png" width="40%" height="40%"></div>
