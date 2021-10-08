@@ -51,7 +51,7 @@ The propose architecture of the deep neural network for SER is shown in figure a
 ### Usage
 ---
 #### Installing dependencies
----
+
 Note: You can skip this step, if you are installing the packages. Dependencies are listed in the requirements.txt file.
 ##### Requirements
 * numpy
