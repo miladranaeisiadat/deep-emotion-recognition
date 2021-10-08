@@ -48,12 +48,10 @@ At first we divided whole datasets (EMODB, EMOVO, TESS, CREMA, RAVDESS, SHEMO, S
 The propose architecture of the deep neural network for SER is shown in figure above. The architecture of the deep neural network that was implemented in our study was a one-dimensional convolutional neural network(1D CNN) with three convolutional layers and one fully connected layer with 128 hidden neurons. As we mentioned before, we have three databases with different number of classes. There- fore, depending on the number of classes for each database, have used “softmax” as activation function for the final output nodes to estimate the probability distribution of the classes. We have use max-polling after second and third convolution layer. We chose Rectified Linear Units (ReLU) in convolutional and fully connected layers as activation function to reduce the occurrence of over-fitting problem and introduce nonlinearity to the model. The initial number of kernels was set to 8 and 16 for the first and the second convolutional layers and 32 for the third convolution layer, respectively. Also, the size of each convolution filter is 5 ∗ 1 with 1 stride and ’same’ padding to generate feature maps. the kernel size for max-pooling is 2 with 2 strides and ’same’ padding. We have used Xavier initialize At the fully connected layer to tune initial weight’s values. cross-entropy minimization was used as the loss function and Adam with parameters lr=0.0001 as the optimize. The number of training iteration was 500. Further, we incorporated the dropout operation after the third convolution layer to prevent overfitting and improve the performance.
 
 
-### Usage
+### Installing dependencies
 ---
-#### Installing dependencies
-
 Note: You can skip this step, if you are installing the packages. Dependencies are listed in the requirements.txt file.
-##### Requirements
+#### Requirements
 * numpy
 * pandas
 * librosa==0.8.1
@@ -74,3 +72,21 @@ After creating virtual environment, it is necessary to activate the virtual envi
 ```sh
 pip install -r requirements.txt
 ```
+### Usage
+---
+After cloning the repository and create vitual enviroment you can follow the instructions below to prepare dataset and  run the neural network for traing and testing data.
+
+**step 1**  :***Download Dataset***
+There is a folder for each dataset in the dataset folder. In the first step, you should choose a dataset such as EMODB, EMOVO, TESS ... which wanna work on this and download it from the above links. After downloaing, put it into the appropiate folder in dataset folder. For instance, you supposed to train neural network on ***RAVDESS*** dataset. After downloadind ***RAVDESS***, Then put the entire dataset in to the ***datasets/RAVDESS/***.
+
+**step 2**  :***Creating CSV file of each dataset and split data to train and test (80/20)***
+In the second step, should create a CSV file of selected dataset. Run the code below to create a CSV file and save it automatically into the ***datasets/csv/*** directory.
+```sh
+python3 dataset.py -d ./datasets/RAVDESS/ -n ravdess
+```
+##### parameters
+
+Long option | Option | Description
+----------- | ------ | -----------
+--dataset | -d | dataset path
+--dataset_name | -n | dataset name
