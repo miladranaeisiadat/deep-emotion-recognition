@@ -76,7 +76,7 @@ pip install -r requirements.txt
 ---
 After cloning the repository and create vitual enviroment you can follow the instructions below to prepare dataset and  run the neural network for traing and testing data.
 
-**step 1**  :***Download Dataset***
+**step 1**  :***Download Dataset*** <br>
 There is a folder for each dataset in the dataset folder. In the first step, you should choose a dataset such as EMODB, EMOVO, TESS ... which wanna work on this and download it from the above links. After downloaing, put it into the appropiate folder in dataset folder. For instance, you supposed to train neural network on ***RAVDESS*** dataset. After downloadind ***RAVDESS***, Then put the entire dataset in to the ***datasets/RAVDESS/***.
 
 **step 2**  :***Creating CSV file of each dataset and split data to train and test (80/20)***
