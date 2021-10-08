@@ -34,3 +34,10 @@ radio plays which are broadcasting online. The ShEMO Database contains speech sa
 Pre-processing is on of the main part of preparing input signal to achieve model accuracy and efficiency. First, we loaded the audio files into python 3.6 using LibROSA library. We used original sample rate (22 Hz) and bit-depth For having a consistent sampling rate across all databases and audio is provided in stereo and normalized to a mono format. For each utterance in the dataset, we extract Mel-frequency cepstral coefficients features named **[MFCCS](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/)(50 coefficients)**. We chose **‘Hann’** as window function. Window size is 512 (23 milliseconds at a sample rate of 22050 Hz) and a hop_length of 256 or 50% overlap which provides a good balance between performance and computational complexity. The shape of an MFCC output for each utterance is a 2D matrix format with MFCC bands on the y-axis and time on the x-axis, representing the MFCC bands over time. We visualized the MFCC of three different emotions such as neural, sad and happy which shown in the figure below. 
 
 ![](images/MFCCS.png)
+
+As mentioned, the output of MFCC is a 2D matrix format with MFCC bands on the y-axis and time on the x-axis. To simplify things, we take the mean value across each band over time. In other words, we take the mean value on each row. So, after taking mean value we have a vector of features instead of a 2D matrix which is the same with number of MFCC. This vector will be input to our Convolutional neural network.
+
+#### Training and Test Sets
+At first we divided whole datasets (EMODB, EMOVO, TESS, CREMA, RAVDESS, SHEMO, SAVEE) for training purpose and testing purpose with each **80%** and **20%** of the data respectively. Then we have computed the **MFCC features (50 coefficients)** for each utterance in training dataset and test dataset also. Finally, the labels of the training and the test data were encoded as **one-hot** vectors and fed them to our CNN network.<br>
+
+![](images/split.png)
