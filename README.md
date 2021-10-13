@@ -91,3 +91,30 @@ Long option | Option | Description
 ----------- | ------ | -----------
 --dataset | -d | dataset path
 --dataset_name | -n | dataset name
+
+After executing the above code, a file with the CSV format similar to the name of dataset will be created in the datasets/csv/ folder, which contains train and test data of the selected dataset. 
+
+**step 3: Building Models**
+Since the project is a classification problem, 1D Convolution Neural Network is the obivious choice.
+Building and tuning a model is a very time consuming process so run the code below to train our model on a certain dataset.
+```sh
+python find_best_model.py -d "ravdess" -p [ravdess csv path] -l -a -s -c
+```
+example: 
+```sh
+python3 deep_emotion_recognition -d ravdess -p datasets/csv/ravdess.csv -l -a -s -c
+```
+##### parameters
+Long option | Option | Description
+----------- | ------ | -----------
+--dataset | -d | dataset path
+--csv_path | -p | csv name
+--load_data | -l | Load data and feature extracting and split to train and test
+--show_accuracy | -a | Show accuracy plot for train and test data
+--save_model | -s | Save model into the model folder
+--plot_confusion | -c | Plot confusion matrix for determine how model predict well
+
+After runnig the above code, you need to wait a short time to train the neural network for specific dataset. Then see the result with choosing an appropriate parameters.
+
+**step 4: Predictions**
+After tuning the model, tested it out by predicting the emotions for the test data. 

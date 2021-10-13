@@ -356,6 +356,9 @@ class EmotionDatasets():
 if __name__ == '__main__':
     '''
     Example : python3 dataset.py -d ./datasets/EMODB/ -n emodb
+
+    --dataset_path : path of the dataset
+    --dataset_name : name of the dataset
     '''
     parser = OptionParser()
     parser.add_option('-d', '--dataset_path', dest='path', default='')
