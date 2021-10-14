@@ -117,4 +117,11 @@ Long option | Option | Description
 After runnig the above code, you need to wait a short time to train the neural network for specific dataset. Then see the result with choosing an appropriate parameters.
 
 **step 4: Predictions**
-After tuning the model, tested it out by predicting the emotions for the test data. 
+After tuning the model, tested it out by predicting the emotions for the test data. use below code to predict the probability of a wav sound which blong to a dataset. 
+```sh
+python3 prediction.py -p [path of wav sound] -m [path of model]
+```
+example:
+```sh
+python3 prediction.py -p ./datasets/RAVDESS/Actor_16/03-01-03-02-01-01-16.wav -m ./model/ravdess_best_model.h5
+```
