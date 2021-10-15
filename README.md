@@ -98,11 +98,11 @@ After executing the above code, a file with the CSV format similar to the name o
 Since the project is a classification problem, 1D Convolution Neural Network is the obivious choice.
 Building and tuning a model is a very time consuming process so run the code below to train our model on a certain dataset.
 ```sh
-python find_best_model.py -d "ravdess" -p [ravdess csv path] -l -a -s -c
+python deep_emotion_recognition.py -d "ravdess" -p [ravdess csv path] -l -a -s -c
 ```
 example: 
 ```sh
-python3 deep_emotion_recognition -d ravdess -p datasets/csv/ravdess.csv -l -a -s -c
+python3 deep_emotion_recognition.py -d ravdess -p datasets/csv/ravdess.csv -l -a -s -c
 ```
 ##### parameters
 Long option | Option | Description
